@@ -1,20 +1,17 @@
 program tsunami
+use iso_fortran_env, only: int32, real32
 
 implicit none
 
-integer :: i, n ! indices in space and time
-integer :: im   ! grid size in space
-integer :: nm   ! number of time steps
+integer(kind=int32) :: i, n
 
-real :: dt ! time step [s]
-real :: dx ! grid spacing [m]
-real :: c  ! phase speed [m/s]
+integer(kind=int32), parameter :: im = 100
+integer(kind=int32), parameter :: nm = 100
 
-im = 100
-nm = 100
+real(kind=real32), parameter :: dt = 1
+real(kind=real32), parameter :: dx = 1
+real(kind=real32), parameter :: c = 1
 
-dt = 1.
-dx = 1.
-c = 1.
+real(kind=real32), dimension(im) :: du, u
 
 end program tsunami
